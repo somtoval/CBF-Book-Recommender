@@ -2,9 +2,21 @@
 from django.urls import path
 from . import views
 
-app_name = 'books'
+# app_name = 'books'
+
+# urlpatterns = [
+#     path('', views.book_list, name='book_list'),
+#     path('recommendations/<int:book_id>/', views.get_recommendations, name='get_recommendations'),
+# ]
+
 
 urlpatterns = [
+    # Main book list view with search and filtering
     path('', views.book_list, name='book_list'),
+    
+    # API endpoint for getting book recommendations
     path('recommendations/<int:book_id>/', views.get_recommendations, name='get_recommendations'),
+    
+    # Form for adding new books
+    path('add/', views.add_book, name='add_book'),
 ]
